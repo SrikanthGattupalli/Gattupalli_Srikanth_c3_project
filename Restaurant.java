@@ -75,10 +75,32 @@ public class Restaurant {
         return name;
     }
 
-    public double totalamount(){
-        
+    public double totalcost() {
+        ArrayList list = new ArrayList();
+        Scanner input = new Scanner(System.in);
+        getMenu();
+        String choice;
+        Double Total_cost = Double.valueOf(0);
+        System.out.println("please select from menu :");
+        choice = input.next();
+        while (choice != "exit") {
+            getMenu();
+            list.add(choice);
+            choice = input.next();
+        }
+
+        if(list.isEmpty()){
+            return 0.0;
+        }
+
+        for (Object Selected_items : list) {
+            System.out.println(Selected_items);
+            int price = Item.getprice((String) Selected_items);
+            Total_cost = price + Total_cost;
 
 
+        }
+        return Total_cost;
     }
 
 }
