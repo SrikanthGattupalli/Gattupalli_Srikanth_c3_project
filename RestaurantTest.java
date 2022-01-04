@@ -78,5 +78,13 @@ class RestaurantTest {
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
     }
+    
+     @Test
+    public void Get_total_as_0_if_no_item_is_selected(){
+        Restaurant restaurant = null;
+        double total=restaurant.totalcost();
+        assertEquals(0.0,total);
+
+    }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
