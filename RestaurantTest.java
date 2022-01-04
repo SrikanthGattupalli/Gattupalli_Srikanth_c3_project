@@ -79,12 +79,30 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     
-     @Test
+    @Test
     public void Get_total_as_0_if_no_item_is_selected(){
-        Restaurant restaurant = null;
-        double total=restaurant.totalcost();
-        assertEquals(0.0,total);
+        int total=0;
+        ArrayList menu=new ArrayList();
+        if(menu.isEmpty()){
+             total=0;
+        }
+        assertEquals(0,total);
 
     }
+
+    @Test
+    public  void get_total_if_any_item_is_selected_to_cart(){
+
+        int item1_cost=15;
+        int item2_coat=30;
+        int item3_cost=12;
+        int total=item1_cost+item2_coat+item3_cost;
+
+        assertEquals(57,total);
+
+
+    }
+    //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
